@@ -18,6 +18,15 @@ gcc src/poc.c
 ./a.out
 ```
 
+#### On Alpine
+```
+apk update
+apk add gcc
+apk add g++
+gcc src/poc.c
+./a.out
+```
+
 If you see '"The Magic Words are Squeamish Ossifrage."' in the output, then you are affected.
 
 
