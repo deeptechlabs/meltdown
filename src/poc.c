@@ -10,8 +10,8 @@
  *       Revision:  none
  *       Compiler:  gcc
  *
- *         Author:  Various Source, Dendi Suhubdy (2017), 
- *   Organization:  Suhubdy Technologies LLC
+ *         Author:  Paul Kocher1 , Daniel Genkin2 , Daniel Gruss3 , Werner Haas4 , Mike Hamburg5 , 
+ * 		    Moritz Lipp3 , Stefan Mangard3 , Thomas Prescher4 , Michael Schwarz3 , Yuval Yarom (2017)
  *
  * =====================================================================================
  */
