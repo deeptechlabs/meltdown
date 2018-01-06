@@ -6,16 +6,16 @@ https://cxsecurity.com/issue/WLB-2018010039
 
 #### On Ubuntu
 ```
-sudo apt-get install gcc
-gcc src/poc.c
-./a.out
+sudo apt-get install gcc make
+make
+./meltdown
 ```
 
 #### On Cent-OS / Amazon Linux
 ```
-sudo yum install gcc
-gcc src/poc.c
-./a.out
+sudo yum install gcc make
+make
+./meltdown
 ```
 
 #### On Alpine
@@ -23,8 +23,9 @@ gcc src/poc.c
 apk update
 apk add gcc
 apk add g++
-gcc src/poc.c
-./a.out
+apk add make
+make
+./meltdown
 ```
 
 If you see '"The Magic Words are Squeamish Ossifrage."' in the output, then you are affected.
