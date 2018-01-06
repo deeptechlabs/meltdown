@@ -46,6 +46,3 @@ make
 ./meltdown
 ```
 
-If you see '"The Magic Words are Squeamish Ossifrage."' in the output, then you are affected.
-
-
